@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiche de notes – Wireshark</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #005f73;
+    }
+    code {
+      background-color: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .note {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="note">
+    <h1>📄 Fiche de notes : Wireshark – Analyse réseau</h1>
+
+    <h2>🧾 Nom de l’outil</h2>
+    <p><strong>Wireshark</strong> – Analyseur de paquets réseau</p>
+
+    <h2>🎯 Objectif de l’outil</h2>
+    <ul>
+      <li>Capturer, filtrer et analyser le trafic réseau</li>
+      <li>Détecter des anomalies et comportements suspects</li>
+      <li>Lire des fichiers PCAP (utiles en forensic ou CTF)</li>
+    </ul>
+
+    <h2>📦 Installation</h2>
+    <ul>
+      <li>Téléchargement : <a href="https://www.wireshark.org/" target="_blank">wireshark.org</a></li>
+      <li>Windows : installer aussi <strong>Npcap</strong> pour la capture en direct</li>
+    </ul>
+
+    <h2>🧪 Commandes / Fonctions clés testées</h2>
+    <table>
+      <tr><th>Action</th><th>Commande / Commentaire</th></tr>
+      <tr><td>Filtrer le trafic HTTP</td><td><code>http</code></td></tr>
+      <tr><td>Voir uniquement les requêtes GET</td><td><code>http.request.method == "GET"</code></td></tr>
+      <tr><td>Filtrer par IP</td><td><code>ip.addr == 192.168.1.10</code></td></tr>
+      <tr><td>Filtrer par port</td><td><code>tcp.port == 80</code></td></tr>
+      <tr><td>Reconstituer une session TCP</td><td>Clic droit > "Follow" > "TCP Stream"</td></tr>
+      <tr><td>Marquer des paquets</td><td><code>Ctrl+M</code></td></tr>
+      <tr><td>Rechercher un mot-clé</td><td><code>Ctrl+F</code></td></tr>
+      <tr><td>Lire un fichier PCAP</td><td>Fichier > Ouvrir</td></tr>
+    </table>
+
+    <h2>🔍 Observations / test</h2>
+    <p>
+      J’ai ouvert un fichier PCAP contenant une attaque brute-force sur une page de login.<br>
+      - Filtrage par IP suspecte → Requêtes POST vers <code>/login</code><br>
+      - J’ai pu extraire l’heure, l’adresse IP et suivre le flux TCP pour voir les requêtes.
+    </p>
+
+    <h2>💡 Points à retenir</h2>
+    <ul>
+      <li>Wireshark affiche les paquets réseau capturés en temps réel ou via PCAP</li>
+      <li>Permet d’analyser le contenu non chiffré des requêtes HTTP</li>
+      <li>Filtrage très puissant avec les expressions BPF</li>
+    </ul>
+
+    <h2>📚 Ressources utiles</h2>
+    <ul>
+      <li><a href="https://tryhackme.com/room/wireshark" target="_blank">TryHackMe – Wireshark Room</a></li>
+      <li><a href="https://wiki.wireshark.org/DisplayFilters" target="_blank">Wireshark Display Filters</a></li>
+      <li><a href="https://cheatography.com/sschaef/cheat-sheets/wireshark-display-filters/" target="_blank">Cheat sheet PDF</a></li>
+    </ul>
+
+    <h2>📝 Notes personnelles</h2>
+    <ul>
+      <li>Tester l’analyse de trafic réel sur mon réseau local</li>
+      <li>Apprendre à extraire des objets (images, fichiers) d’un flux HTTP</li>
+      <li>Faire une fiche similaire pour tcpdump ou tshark</li>
+    </ul>
+  </div>
+
+</body>
+</html>
