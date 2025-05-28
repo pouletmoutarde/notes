@@ -1,0 +1,14 @@
+w shark suite thm
+
+FILTRES 
+
+flèche vers le bas du clavier pour les recherches précédentes
+
+icone bookmark à gauche pour sauvegarder des filtres
+
++ à droite pour faire un filtre perso et noter sa description
+
+contains → permet de cherche une valeur spécifique contenue dans un paquet 
+ex : http.server contains "Apache" ( trouve tous les paquets http où il y a marqué apache dans serveur )
+
+
