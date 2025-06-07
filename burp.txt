@@ -1,0 +1,34 @@
+PROXY
+
+intercepte les échanges entre le serveur et le client 
+- cocher intercept on 
+
+ONGLETS
+- http history : voir l'historique des requetes
+- target 
+-- site map 
+
+REPEATER
+permet de modifier et renvoyer les requetes 
+1- capturer la requete dans le proxy 
+2 - ctrl + R pour l'envoyer vers le repeater 
+3 - modifier les headers etc 
+4 - cliquer send 
+
+INSPECTOR : utile pour avoir un breakdown des champs 
+
+INTRUDER 
+permet d'automatiser des taches, pratique pour le fuzzing ou le bruteforcing 
+
+CTRL + I pour envoyer une requete vers l'intruder
+
+1 - envoyer la requete vers l'intruder 
+2 - choisir en haut à gauche le type d'attaque
+3 - sélectionner les éléments à changer dans la requête et cliquer sur add (autant de fois par éléments) 
+4 - dans la fenêtre à droite : choisir la position 
+5 - load les wordlists 
+6 - start attack button 
+
+ORGANIZER Module 
+pour stocker et annoter des captures qu'on veut garder sous la main 
+CTRL+O pour envoyer les requetes vers l'organizer  
