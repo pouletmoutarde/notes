@@ -1,0 +1,33 @@
+Secure Your Active Directory and Windows Domains
+
+    Machine names:
+
+        Target machines
+
+        IP addresses (or ranges)
+
+        Open services:
+
+            Service versions
+
+    Usernames:
+
+        Interesting privileges
+
+    Specific configuration settings:
+
+        Active Directory
+
+        Other
+
+KILL CHAIN
+
+    Initial Reconnaissance
+
+    First Compromise
+
+    Lateral Movement
+
+    Privilege Escalation
+
+    Persistence
