@@ -61,6 +61,11 @@ FAIRE UN REVERSE SHELL
 1- en prendre un ici : https://www.revshells.com/
 où lui : https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
 
+1- Ou taper : locate php-reverse
+>>>>>> /usr/share/webshells/php/php-reverse-shell.php <<<<<<
+/usr/share/wordlists/SecLists/Web-Shells/laudanum-0.8/php/php-reverse-shell.php
+
+
 Remplacer le "ip" par notre ip de la machine, comme ça on reçoit la connexion. garder le port 
 Ouvrir un autre terminal qui va écouter la connexion
 nc -lvnp 1234
