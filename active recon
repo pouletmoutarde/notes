@@ -74,11 +74,19 @@ si le shell a été upload sur un file, essayer d'y accéder dans l'url pour l'a
 
 Une fois la connexion reçue, possible de taper des commandes 
 
+
 ECOUTER AVEC NETCAT 
 nc -lnvp numeroport
 
-RCE 
 
-
+TELNET
+ a TELNET client, allows you to connect to and communicate with a remote system and issue text commands. 
+possible de se connecter à n'importe quel serveur qui écoute sur un port TCP
+telnet IP PORT 
+demander une page http sur un serveur port 80 : 
+    GET / HTTP/1.1 
+    Host: telnet.thm
+  appuyer sur entrée deux fois 
+close = terminer la connection 
 
 
