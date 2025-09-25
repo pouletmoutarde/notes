@@ -13,6 +13,10 @@ nmap -sS -Pn -T5 -p- 10.10.119.88
 -T5 : très rapide mais pas discret 
 -p- scanne tous les ports de 1 à 65535) 
 
+SCAN RESEAU
+netstat -tulnp (ou ss -tulnp) : pour voir les ports ouverts
+lsof -i : pour voir les fichiers/ports réseau utilisés
+
 NETCAT SE CONNECTER EN TCP 
 écoute aux ports, se connecte aux ports 
 nc MACHINE_IP N°PORT -v
